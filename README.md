@@ -1,6 +1,6 @@
 # gastrosichtbar.ch
 
-Einseitige Website für gastrosichtbar.ch – Stefan Senn, Brunnen SZ.
+Einseitige Website für gastrosichtbar.ch, Stefan Senn, Brunnen SZ.
 Reines HTML und CSS, kein JavaScript, keine externen Einbindungen, keine Cookies.
 
 ## Seite lokal ansehen
