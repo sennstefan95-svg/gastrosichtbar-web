@@ -521,6 +521,31 @@ section[id] { scroll-margin-top: 1rem; }
 .leistungen h3 { font-size: 1.375rem; margin: 0 0 0.3rem; }
 .leistungen p { margin: 0; color: var(--grau); }
 
+/* ---------- Danach: Sichtbar bleiben ---------- */
+.danach {
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+  background: var(--sand);
+  border-radius: 8px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  display: grid;
+  gap: 1.25rem 3rem;
+}
+@media (min-width: 56rem) {
+  .danach { grid-template-columns: 5fr 7fr; align-items: start; }
+  .danach-fuss { grid-column: 2; }
+}
+.danach .kicker { margin-bottom: 0.5rem; }
+.danach h3 { font-size: clamp(1.75rem, 4vw, 2.25rem); margin: 0 0 0.75rem; }
+.danach-preis { margin: 0 0 0.25rem; font-size: 1.125rem; }
+.danach-preis strong { font-family: var(--serif); font-weight: 500; font-size: 1.75rem; color: var(--weinrot); margin-right: 0.25rem; }
+.danach-claim { font-family: var(--serif); font-style: italic; color: var(--grau); margin: 0; }
+.danach-liste { margin: 0; padding: 0; list-style: none; }
+.danach-liste li { position: relative; padding: 0.6rem 0 0.6rem 1.5rem; border-top: 1px solid var(--linie); }
+.danach-liste li:first-child { border-top: 0; padding-top: 0; }
+.danach-liste li::before { content: ""; position: absolute; left: 0; top: 1.15rem; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--senf); }
+.danach-liste li:first-child::before { top: 0.55rem; }
+.danach-fuss { margin: 0; font-size: 0.9375rem; color: var(--grau); }
+
 /* ---------- Ablauf: nummerierte Schritte ---------- */
 .schritte {
   list-style: none;
