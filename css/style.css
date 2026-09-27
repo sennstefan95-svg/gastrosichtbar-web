@@ -632,50 +632,91 @@ section[id] { scroll-margin-top: 1rem; }
 /* ---------- Kontaktformular ---------- */
 .formular {
   margin: 3.5rem 0 0;
-  padding-top: 2.5rem;
-  border-top: 1px solid #5a4f48;
-  max-width: 48rem;
+  background: var(--papier);
+  color: var(--tinte);
+  border-top: 6px solid var(--weinrot);
+  border-radius: 8px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  scroll-margin-top: 1rem;
 }
-.formular h3 { font-size: 1.625rem; color: #fff; margin-bottom: 0.5rem; }
-.formular-hinweis { font-size: 1rem; }
-.formular-hinweis a { color: #fff; text-decoration-color: #f0c9a8; }
-.formular-raster {
-  display: grid;
-  gap: 1.25rem;
-  margin: 1.5rem 0;
+.kontakt .formular h3 { font-size: clamp(1.625rem, 3vw, 2rem); color: var(--tinte); margin: 0 0 0.5rem; }
+.kontakt .formular .formular-hinweis { font-size: 1rem; color: var(--grau); margin: 0; }
+.kontakt .formular .formular-hinweis a { color: var(--weinrot); }
+.gruppe {
+  border: 0;
+  border-top: 1px solid var(--linie);
+  margin: 2rem 0 0;
+  padding: 1.5rem 0 0;
+  min-width: 0;
 }
+.gruppe legend {
+  padding: 0 0.75rem 0 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--weinrot);
+}
+.felder { display: grid; gap: 1.25rem 1.5rem; }
 @media (min-width: 40rem) {
-  .formular-raster { grid-template-columns: 1fr 1fr; }
-  .feld-breit { grid-column: 1 / -1; }
+  .felder-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+@media (min-width: 56rem) {
+  .felder-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 40rem) and (max-width: 55.99rem) {
+  .felder-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .felder-3 .feld:last-child { grid-column: 1 / -1; }
+}
+.feld { display: flex; flex-direction: column; }
 .feld label {
-  display: block;
   font-size: 1rem;
   font-weight: 600;
-  color: #cfc4b5;
-  margin-bottom: 0.35rem;
+  color: var(--tinte);
+  margin-bottom: 0.4rem;
 }
 .feld input,
 .feld textarea {
   width: 100%;
   box-sizing: border-box;
-  min-height: 3.25rem;
+  height: 3.25rem;
   padding: 0.75rem 1rem;
-  border: 2px solid #5a4f48;
-  border-radius: 0.5rem;
-  background: #fffcf6;
+  border: 1px solid var(--linie);
+  border-radius: 6px;
+  background: var(--leinen);
   color: var(--tinte);
   font-family: var(--sans);
   font-size: 1.125rem;
   line-height: 1.4;
+  transition: border-color 0.15s, background-color 0.15s;
 }
-.feld textarea { resize: vertical; min-height: 9rem; }
-.feld input:focus,
-.feld textarea:focus { border-color: #f0c9a8; outline: 3px solid #f0c9a8; outline-offset: 1px; }
+.feld textarea { height: auto; min-height: 10rem; resize: vertical; }
+.feld input:hover,
+.feld textarea:hover { border-color: var(--grau); }
+.kontakt .formular .feld input:focus,
+.kontakt .formular .feld textarea:focus {
+  background: #fff;
+  border-color: var(--weinrot);
+  outline: 2px solid var(--weinrot);
+  outline-offset: 0;
+}
 .feld-falle { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-.formular .btn { cursor: pointer; margin-top: 0.5rem; }
+.formular-fuss {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--linie);
+}
+.formular-fuss .formular-hinweis { flex: 1 1 22rem; }
+.kontakt .formular .btn-primary { background: var(--weinrot); border-color: var(--weinrot); color: #fff; cursor: pointer; }
+.kontakt .formular .btn-primary:hover { background: var(--weinrot-dunkel); border-color: var(--weinrot-dunkel); color: #fff; }
+.kontakt .formular :focus-visible { outline-color: var(--weinrot); }
 @media (max-width: 30rem) {
-  .formular .btn { width: 100%; }
+  .formular-fuss .btn { width: 100%; }
 }
 
 /* ---------- Fuss ---------- */
