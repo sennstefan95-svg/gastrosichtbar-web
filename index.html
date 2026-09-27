@@ -269,7 +269,7 @@
       <div class="wrap">
         <p class="kicker">Kontakt</p>
         <h2 id="kontakt-titel">Rufen Sie mich <em>einfach</em> an.</h2>
-        <p>Oder schreiben Sie mir eine E-Mail. Der Sichtbarkeits-Check ist kostenlos.</p>
+        <p>Oder schreiben Sie mir über das Formular unten. Der Sichtbarkeits-Check ist kostenlos.</p>
         <address>
           <dl class="kontakt-liste">
             <div>
@@ -290,6 +290,43 @@
           <a class="btn btn-primary" href="tel:+41768319899">Anrufen</a>
           <a class="btn btn-secondary" href="mailto:stefan@gastrosichtbar.ch?subject=Sichtbarkeits-Check">E-Mail schreiben</a>
         </div>
+
+        <form class="formular" action="/kontakt" method="post" aria-labelledby="formular-titel">
+          <h3 id="formular-titel">Nachricht senden</h3>
+          <p class="formular-hinweis">Felder mit * brauche ich, um Ihnen antworten zu können. Ich melde mich innert eines Arbeitstags.</p>
+          <div class="formular-raster">
+            <div class="feld">
+              <label for="f-restaurant">Restaurant *</label>
+              <input id="f-restaurant" name="restaurant" type="text" required maxlength="150" autocomplete="organization">
+            </div>
+            <div class="feld">
+              <label for="f-ort">Ort</label>
+              <input id="f-ort" name="ort" type="text" maxlength="120" autocomplete="address-level2">
+            </div>
+            <div class="feld">
+              <label for="f-name">Ihr Name *</label>
+              <input id="f-name" name="name" type="text" required maxlength="120" autocomplete="name">
+            </div>
+            <div class="feld">
+              <label for="f-telefon">Telefon</label>
+              <input id="f-telefon" name="telefon" type="tel" maxlength="40" autocomplete="tel">
+            </div>
+            <div class="feld feld-breit">
+              <label for="f-email">E-Mail *</label>
+              <input id="f-email" name="email" type="email" required maxlength="200" autocomplete="email">
+            </div>
+            <div class="feld feld-breit">
+              <label for="f-nachricht">Nachricht *</label>
+              <textarea id="f-nachricht" name="nachricht" rows="5" required maxlength="5000"></textarea>
+            </div>
+            <div class="feld-falle" aria-hidden="true">
+              <label for="f-website">Bitte leer lassen</label>
+              <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+          </div>
+          <p class="formular-hinweis">Ihre Angaben verwende ich nur, um Ihre Anfrage zu beantworten. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+          <button class="btn btn-primary" type="submit">Nachricht senden</button>
+        </form>
       </div>
     </section>
   </main>

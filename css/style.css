@@ -629,6 +629,55 @@ section[id] { scroll-margin-top: 1rem; }
 .kontakt .btn-secondary:hover { background: #f5efe4; color: var(--weinrot-dunkel); }
 .kontakt :focus-visible { outline-color: #f0c9a8; }
 
+/* ---------- Kontaktformular ---------- */
+.formular {
+  margin: 3.5rem 0 0;
+  padding-top: 2.5rem;
+  border-top: 1px solid #5a4f48;
+  max-width: 48rem;
+}
+.formular h3 { font-size: 1.625rem; color: #fff; margin-bottom: 0.5rem; }
+.formular-hinweis { font-size: 1rem; }
+.formular-hinweis a { color: #fff; text-decoration-color: #f0c9a8; }
+.formular-raster {
+  display: grid;
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+@media (min-width: 40rem) {
+  .formular-raster { grid-template-columns: 1fr 1fr; }
+  .feld-breit { grid-column: 1 / -1; }
+}
+.feld label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #cfc4b5;
+  margin-bottom: 0.35rem;
+}
+.feld input,
+.feld textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 3.25rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid #5a4f48;
+  border-radius: 0.5rem;
+  background: #fffcf6;
+  color: var(--tinte);
+  font-family: var(--sans);
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+.feld textarea { resize: vertical; min-height: 9rem; }
+.feld input:focus,
+.feld textarea:focus { border-color: #f0c9a8; outline: 3px solid #f0c9a8; outline-offset: 1px; }
+.feld-falle { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.formular .btn { cursor: pointer; margin-top: 0.5rem; }
+@media (max-width: 30rem) {
+  .formular .btn { width: 100%; }
+}
+
 /* ---------- Fuss ---------- */
 .fuss {
   padding: 2rem 0 2.5rem;
