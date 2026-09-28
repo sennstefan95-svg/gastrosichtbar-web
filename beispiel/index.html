@@ -10,7 +10,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/zilla-slab-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/nunito-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=20260928c">
+  <link rel="stylesheet" href="style.css?v=20260928d">
 </head>
 <body>
   <!-- Hinweis Beispielseite: bei einer Kundenseite ganz entfernen -->
@@ -182,7 +182,7 @@
       <h2 id="reservation-titel">Tisch reservieren</h2>
       <button class="schliessen" type="button" popovertarget="reservation" popovertargetaction="hide" aria-label="Fenster schliessen">×</button>
     </div>
-    <p class="reservation-info">Wir bestätigen Ihre Reservation telefonisch oder per SMS. Felder mit * bitte ausfüllen.</p>
+    <p class="reservation-info">Sie erhalten die Bestätigung Ihrer Reservation per E-Mail. Felder mit * bitte ausfüllen.</p>
     <form class="formular" action="#reservation-danke" method="get">
       <p class="feld">
         <label for="r-name">Name *</label>
@@ -198,6 +198,10 @@
           <input id="r-tel" type="tel" autocomplete="tel" required>
         </p>
       </div>
+      <p class="feld">
+        <label for="r-mail">E-Mail *</label>
+        <input id="r-mail" type="email" autocomplete="email" required>
+      </p>
       <div class="feld-reihe">
         <p class="feld">
           <label for="r-datum">Datum *</label>
@@ -218,7 +222,7 @@
   </div>
 
   <!-- Nur Musterseite: Anzeige nach dem Absenden -->
-  <p id="reservation-danke" class="danke">Beispiel: So sieht der Gast die Bestätigung. «Danke, Ihre Anfrage ist bei uns. Wir melden uns so rasch wie möglich.» Gesendet wurde nichts.</p>
+  <p id="reservation-danke" class="danke">Beispiel: So sieht der Gast die Bestätigung. «Danke, Ihre Anfrage ist bei uns. Sie erhalten die Bestätigung per E-Mail.» Gesendet wurde nichts.</p>
 
   <!-- Fuss mit Impressum und Datenschutz -->
   <footer class="fuss">
@@ -233,7 +237,7 @@
         <summary>Datenschutz</summary>
         <p>Diese Website setzt keine Cookies, verwendet keine Analyse- oder Werbedienste und lädt keine Inhalte von fremden Servern. Beim Besuch werden keine Daten an Dritte übermittelt.</p>
         <p>Die Website liegt auf einem Server in der Schweiz. Der Server speichert technisch notwendige Angaben (IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browser) in Protokolldateien. Diese dienen nur dem sicheren Betrieb.</p>
-        <p>Wenn Sie uns anrufen oder schreiben, verwenden wir Ihre Angaben nur, um Ihre Anfrage oder Reservation zu bearbeiten. Der Link zur Karte führt auf OpenStreetMap. Dort gilt deren Datenschutzerklärung.</p>
+        <p>Wenn Sie uns anrufen, schreiben oder online reservieren, verwenden wir Ihre Angaben nur, um Ihre Anfrage oder Reservation zu bearbeiten. Reservationsanfragen löschen wir kurz nach dem reservierten Datum. Der Link zur Karte führt auf OpenStreetMap. Dort gilt deren Datenschutzerklärung.</p>
         <p>Auskunft, Berichtigung oder Löschung Ihrer Daten: eine kurze Nachricht an uns genügt.</p>
       </details>
       <p class="fuss-zeile">© 2026 Gasthaus Musterhof · Beispielseite von <a href="../">gastrosichtbar.ch</a></p>
