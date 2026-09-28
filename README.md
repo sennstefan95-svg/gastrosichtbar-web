@@ -34,7 +34,8 @@ favicon.svg         Symbol im Browser-Tab
 robots.txt, sitemap.xml
 beispiel/           Musterseite «Gasthaus Musterhof» (erfunden), zugleich Vorlage für Kundenseiten
   index.html        Die ganze Seite, inkl. Impressum und Datenschutz im Fuss
-  style.css         Eigenes Design; Farben oben in :root, Schriften aus ../fonts/
+  style.css         Eigenes Design «Alpen-Tafel»; Farben oben in :root
+  fonts/            Eigene Schriften Zilla Slab + Nunito Sans (SIL OFL 1.1), bewusst andere als gastrosichtbar.ch
   favicon.svg       Symbol im Browser-Tab
   img/              Startbild (800/1600 px) und Bild «Über uns», je WebP und JPG
   BILDER.md         Quelle und Lizenz jedes Bildes
@@ -43,6 +44,8 @@ beispiel/           Musterseite «Gasthaus Musterhof» (erfunden), zugleich Vorl
 Die Musterseite hat `noindex` und steht bewusst nicht in `sitemap.xml`.
 
 ## Foto ersetzen
+
+Nach einem Austausch in `index.html` den Cache-Zusatz `?v=DATUM` bei beiden Bildpfaden erhöhen, sonst zeigen Browser bis zu 7 Tage das alte Bild.
 
 Das Porträt ist seit 28.9.2026 das echte Foto von Stefan (Balkon, Brunnen). Zum Austauschen **beide** Dateien ersetzen, gleicher Name, EXIF/GPS vorher entfernen:
 
@@ -91,9 +94,9 @@ Seite liegt, den Abschnitt «Server-Protokolle» in `datenschutz.html` ergänzen
 
 ## Aus der Musterseite eine Kundenseite machen
 
-1. Ordner `beispiel/` in ein neues Repo bzw. auf den Server des Kunden kopieren, dazu die vier
-   Schriften aus `fonts/` (samt Lizenzdateien). In `style.css` die Pfade `../fonts/` anpassen,
-   z. B. auf `fonts/`, ebenso die `preload`-Links im `<head>` von `index.html`.
+1. Ordner `beispiel/` in ein neues Repo bzw. auf den Server des Kunden kopieren. Er ist in sich
+   geschlossen (Schriften liegen in `beispiel/fonts/`). Pro Kunde Farben in `:root` anpassen,
+   bei Bedarf andere OFL-Schriften, damit nicht jede Kundenseite gleich aussieht.
 2. In `index.html`:
    - Den Hinweis ganz oben (`<!-- Hinweis Beispielseite … -->`, Absatz `.hinweis`) entfernen.
    - `<meta name="robots" content="noindex">` entfernen, `<title>` und `description` anpassen,

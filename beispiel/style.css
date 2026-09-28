@@ -1,50 +1,57 @@
 /* Musterseite Gasthaus: Vorlage für Kundenseiten.
-   Farben zentral in :root anpassen. Schriften aus /fonts/. */
+   Stil «Alpen-Tafel»: Tannengrün, Stein, Ocker. Bewusst anders als gastrosichtbar.ch.
+   Farben zentral in :root anpassen. Schriften lokal in beispiel/fonts/ (SIL OFL 1.1). */
 
 @font-face {
-  font-family: "Fraunces";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("../fonts/fraunces-latin-500-normal.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Source Sans 3";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/source-sans-3-latin-400-normal.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Source Sans 3";
+  font-family: "Zilla Slab";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("../fonts/source-sans-3-latin-600-normal.woff2") format("woff2");
+  src: url("fonts/zilla-slab-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Zilla Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/zilla-slab-latin-700-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/nunito-sans-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/nunito-sans-latin-700-normal.woff2") format("woff2");
 }
 
 :root {
-  --grund: #fbf6ec;       /* Hintergrund */
-  --flaeche: #f1e6d3;     /* farbige Abschnitte */
-  --linie: #dccdb4;
-  --text: #2b2521;
-  --grau: #574d44;        /* Nebentext, Kontrast > 7:1 */
-  --holz: #6b4428;        /* Überschriften */
-  --tanne: #2f5a3c;       /* Knöpfe, Links */
-  --tanne-dunkel: #234630;
-  --nacht: #2a2622;       /* Kontakt-Abschnitt */
-  --hinweis: #f2d06b;
+  --stein: #f3f1ec;        /* Hintergrund */
+  --karte: #ffffff;        /* Karten */
+  --linie: #d9d4c8;
+  --text: #1f2421;
+  --grau: #4a524d;         /* Nebentext */
+  --tanne: #1d3b30;        /* Kopf, Kontakt, Überschriften */
+  --tanne-hell: #2c5646;
+  --ocker: #b8862b;        /* Schmuck: Linien, Knöpfe */
+  --ocker-dunkel: #7d5510; /* Ocker als Text */
+  --hinweis: #ffe08a;
 
-  --titel: "Fraunces", Georgia, "Times New Roman", serif;
-  --text-schrift: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif;
+  --titel: "Zilla Slab", Rockwell, Georgia, serif;
+  --text-schrift: "Nunito Sans", "Segoe UI", Helvetica, Arial, sans-serif;
 
-  --breite: 46rem;
+  --breite: 62rem;
   --rand: clamp(1.25rem, 5vw, 2.5rem);
+  --radius: 14px;
 }
 
-*,
-*::before,
-*::after { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   -webkit-text-size-adjust: 100%;
@@ -57,10 +64,10 @@ html {
 
 body {
   margin: 0;
-  background: var(--grund);
+  background: var(--stein);
   color: var(--text);
   font-family: var(--text-schrift);
-  font-size: 1.25rem;           /* 20px, gut lesbar */
+  font-size: 1.1875rem;
   line-height: 1.6;
 }
 
@@ -68,251 +75,264 @@ img { max-width: 100%; height: auto; display: block; }
 
 h1, h2, h3 {
   font-family: var(--titel);
-  font-weight: 500;
-  line-height: 1.15;
-  color: var(--holz);
-  margin: 0 0 0.5em;
-  text-wrap: balance;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--tanne);
+  margin: 0 0 0.6em;
 }
-h1 { font-size: clamp(2.5rem, 9vw, 4rem); }
-h2 { font-size: clamp(2rem, 6vw, 2.75rem); }
-h3 {
-  font-size: 1.5rem;
-  margin-top: 2rem;
-  padding-bottom: 0.35rem;
-  border-bottom: 2px solid var(--holz);
+h1 { font-size: clamp(2.75rem, 11vw, 5rem); letter-spacing: -0.01em; }
+h2 {
+  font-size: clamp(1.9rem, 6vw, 2.6rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
+h2::after {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 5px;
+  margin-top: 0.4em;
+  background: var(--ocker);
+  border-radius: 3px;
+}
+h3 { font-size: 1.45rem; font-weight: 600; margin-top: 1.6em; }
 
 p { margin: 0 0 1em; }
-
-a { color: var(--tanne); text-underline-offset: 0.15em; text-decoration-thickness: 2px; }
-a:hover { color: var(--tanne-dunkel); }
-
-:focus-visible {
-  outline: 3px solid var(--tanne);
-  outline-offset: 3px;
-}
+a { color: var(--tanne-hell); text-underline-offset: 0.18em; }
+a:hover { color: var(--tanne); }
+:focus-visible { outline: 3px solid var(--ocker-dunkel); outline-offset: 3px; }
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
-
 .skip {
-  position: absolute;
-  left: 1rem;
-  top: -5rem;
-  background: var(--text);
-  color: #fff;
-  padding: 0.75rem 1rem;
-  z-index: 10;
+  position: absolute; left: 1rem; top: -5rem; z-index: 30;
+  background: var(--text); color: #fff; padding: 0.75rem 1rem;
 }
 .skip:focus { top: 1rem; color: #fff; }
 
-.rahmen {
-  max-width: var(--breite);
-  margin: 0 auto;
-  padding-left: var(--rand);
-  padding-right: var(--rand);
-}
+.rahmen { max-width: var(--breite); margin: 0 auto; padding-left: var(--rand); padding-right: var(--rand); }
 
-/* ---------- Hinweis Beispielseite ---------- */
+/* Hinweis Beispielseite */
 .hinweis {
   margin: 0;
-  padding: 0.6rem var(--rand);
+  padding: 0.55rem var(--rand);
   background: var(--hinweis);
   color: var(--text);
-  font-size: 1.0625rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
   line-height: 1.4;
   text-align: center;
-  scroll-margin-top: 0;
 }
-.hinweis a {
-  color: var(--text);
-  display: inline-block;
-  padding: 0.35rem 0;
-  min-height: 44px;
-}
+.hinweis a { color: var(--text); display: inline-block; padding: 0.35rem 0; min-height: 44px; }
 .hinweis:target { outline: 4px solid var(--tanne); outline-offset: -4px; }
 
-/* ---------- Kopf ---------- */
-.kopf { border-bottom: 1px solid var(--linie); }
+/* Kopf: dunkles Band, bleibt oben stehen */
+.kopf { background: var(--tanne); color: #fff; position: sticky; top: 0; z-index: 10; }
 .kopf-innen {
-  max-width: 72rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 0 1.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 .marke {
   font-family: var(--titel);
-  font-size: 1.375rem;
-  color: var(--holz);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #fff;
   text-decoration: none;
   min-height: 48px;
   display: inline-flex;
   align-items: center;
 }
-.kopf ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 1.25rem;
-}
+.marke:hover { color: var(--hinweis); }
+.kopf ul { display: flex; flex-wrap: wrap; gap: 0 1.1rem; list-style: none; margin: 0; padding: 0; }
 .kopf nav a {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
-  min-height: 48px;
-  font-weight: 600;
-  color: var(--text);
-  text-decoration: none;
+  min-height: 44px;
+  border-bottom: 3px solid transparent;
 }
-.kopf nav a:hover { color: var(--tanne); text-decoration: underline; }
+.kopf nav a:hover { border-bottom-color: var(--ocker); color: #fff; }
+.kopf :focus-visible { outline-color: var(--hinweis); }
 
-/* ---------- Knöpfe ---------- */
-.knoepfe {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
-}
+/* Knöpfe: kantig, Grossbuchstaben */
+.knoepfe { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
 .knopf {
-  flex: 1 1 12rem;
+  flex: 1 1 11rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 3.5rem;
-  padding: 0.75rem 1.5rem;
-  border: 2px solid var(--tanne);
-  border-radius: 6px;
-  background: transparent;
-  color: var(--tanne);
-  font-size: 1.25rem;
-  font-weight: 600;
+  min-height: 3.25rem;
+  padding: 0.7rem 1.4rem;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1.05rem;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
-.knopf:hover { background: var(--tanne); color: #fff; }
-.knopf-voll { background: var(--tanne); color: #fff; }
-.knopf-voll:hover { background: var(--tanne-dunkel); border-color: var(--tanne-dunkel); color: #fff; }
+.knopf-voll { background: var(--ocker); border-color: var(--ocker); color: var(--text); }
+.knopf-voll:hover { background: #d19c3c; border-color: #d19c3c; color: var(--text); }
 
-/* ---------- Startbild ---------- */
-.start picture { display: block; max-width: 72rem; margin: 0 auto; }
-.start-bild {
+/* Startbild: Text liegt auf dem Bild */
+.start {
+  display: grid;
+  min-height: min(80vh, 44rem);
+  background: var(--tanne);
+  overflow: hidden;
+}
+.start picture, .start-text, .start::after { grid-area: 1 / 1; }
+.start picture { display: block; }
+.start-bild { width: 100%; height: 100%; object-fit: cover; }
+.start::after {
+  content: "";
+  background: linear-gradient(180deg, rgb(10 25 20 / 0.1) 0%, rgb(10 25 20 / 0.6) 45%, rgb(10 25 20 / 0.92) 100%);
+}
+.start-text {
+  position: relative;
+  z-index: 1;
+  align-self: end;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  background: var(--flaeche);
+  padding-top: 6rem;
+  padding-bottom: clamp(2rem, 6vw, 3.5rem);
+  color: #fff;
 }
-.start-text { padding-top: 2rem; }
-.start-satz { font-size: 1.375rem; line-height: 1.5; }
-.start-ort { color: var(--grau); font-weight: 600; margin: 0; }
-
-/* ---------- Abschnitte ---------- */
-.block { padding-top: clamp(3rem, 8vw, 4.5rem); padding-bottom: 0.5rem; }
-section[id] { scroll-margin-top: 1rem; }
-.block-farbig,
-.block-dunkel { margin-top: clamp(3rem, 8vw, 4.5rem); padding-bottom: clamp(2.5rem, 7vw, 4rem); }
-.block-farbig { background: var(--flaeche); }
-.notiz { color: var(--grau); font-size: 1.125rem; margin-top: 1rem; }
-
-/* Öffnungszeiten */
-.zeiten { width: 100%; border-collapse: collapse; }
-.zeiten th,
-.zeiten td {
-  padding: 0.7rem 0;
-  border-bottom: 1px solid var(--linie);
-  text-align: left;
-  vertical-align: baseline;
+.start-text h1 { color: #fff; margin-bottom: 0.3em; }
+.start-satz { font-size: clamp(1.2rem, 3.5vw, 1.45rem); max-width: 36rem; }
+.start-ort {
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  color: var(--hinweis);
 }
-.zeiten th { font-weight: 600; padding-right: 1rem; }
+.start .knopf:not(.knopf-voll) { color: #fff; }
+.start .knopf:not(.knopf-voll):hover { background: rgb(255 255 255 / 0.14); }
+.start :focus-visible { outline-color: var(--hinweis); }
+
+/* Abschnitte */
+.block { padding-top: clamp(3rem, 8vw, 5rem); padding-bottom: clamp(3rem, 8vw, 5rem); }
+section[id] { scroll-margin-top: 4rem; }
+.block-farbig { background: #e4e9e2; }
+.notiz { color: var(--grau); font-size: 1.05rem; margin-top: 1rem; }
+
+/* Öffnungszeiten als Karte */
+.zeiten {
+  width: 100%;
+  max-width: 34rem;
+  border-collapse: collapse;
+  background: var(--karte);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+}
+.zeiten th, .zeiten td { padding: 0.7rem 1.1rem; border-bottom: 1px solid var(--linie); }
+.zeiten tr:last-child th, .zeiten tr:last-child td { border-bottom: 0; }
+.zeiten th { text-align: left; font-weight: 700; }
 .zeiten td { text-align: right; font-variant-numeric: tabular-nums; }
-.zeiten .ruhetag td { color: var(--holz); font-weight: 600; }
+.zeiten .ruhetag th, .zeiten .ruhetag td { background: #f7efdd; color: var(--ocker-dunkel); font-weight: 700; }
 
-/* Wochenmenü */
-.woche { font-family: var(--titel); font-size: 1.375rem; color: var(--holz); margin-bottom: 0.25rem; }
-.menue { margin: 1.5rem 0 0; }
+/* Wochenmenü als Tageskarten */
+.woche {
+  display: inline-block;
+  font-weight: 700;
+  background: var(--tanne);
+  color: #fff;
+  padding: 0.25rem 0.85rem;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.menue {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+}
 .menue div {
-  padding: 1rem 0;
-  border-top: 1px solid var(--linie);
+  background: var(--karte);
+  border-radius: var(--radius);
+  border-top: 6px solid var(--ocker);
+  padding: 1.1rem 1.25rem 1.25rem;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
 }
 .menue dt {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-family: var(--titel);
+  font-weight: 700;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  color: var(--holz);
+  letter-spacing: 0.06em;
+  color: var(--ocker-dunkel);
+  margin-bottom: 0.35rem;
 }
-.menue dd { margin: 0.2rem 0 0; }
+.menue dd { margin: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+.menue .preis { font-weight: 700; color: var(--tanne); font-variant-numeric: tabular-nums; }
 
-/* Gericht mit Preis: auf dem Handy untereinander, breiter nebeneinander */
-.menue dd,
-.karte li {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0 1.5rem;
+/* Speisekarte: Punktlinie zwischen Gericht und Preis */
+.karte { list-style: none; margin: 0 0 1rem; padding: 0; max-width: 44rem; }
+.karte li { display: flex; align-items: baseline; gap: 0.5rem; padding: 0.45rem 0; }
+.karte .gericht { flex: 0 1 auto; }
+.karte li::after {
+  content: "";
+  order: 1;
+  flex: 1 1 1.5rem;
+  border-bottom: 2px dotted #b9b2a3;
+  transform: translateY(-0.3em);
 }
-.gericht { flex: 1 1 16rem; }
-.preis { font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
-
-/* Speisekarte */
-.karte { list-style: none; margin: 0; padding: 0; }
-.karte li { padding: 0.65rem 0; border-bottom: 1px dotted var(--linie); }
+.karte .preis { order: 2; white-space: nowrap; font-weight: 700; font-variant-numeric: tabular-nums; }
 
 /* Über uns */
 .ueber { display: grid; gap: 2rem; align-items: center; }
 @media (min-width: 44rem) {
-  .ueber { grid-template-columns: 3fr 2fr; }
+  .ueber { grid-template-columns: 1fr 1fr; }
 }
-.ueber-bild { border-radius: 6px; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--flaeche); }
+.ueber-bild {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.14);
+}
 
 /* Kontakt */
-.block-dunkel { background: var(--nacht); color: #f6efe3; }
-.block-dunkel h2 { color: #f2d9b8; }
+.block-dunkel { background: var(--tanne); color: #fff; }
+.block-dunkel h2 { color: #fff; }
 .block-dunkel a { color: #fff; }
 .block-dunkel :focus-visible { outline-color: var(--hinweis); }
 .block-dunkel address { font-style: normal; }
-.kontakt { margin: 0 0 1.5rem; display: grid; gap: 1.25rem; }
+.kontakt { display: grid; gap: 1.25rem; margin: 0 0 1.5rem; }
 @media (min-width: 44rem) {
   .kontakt { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
 }
-.kontakt div { border-top: 1px solid #5c5249; padding-top: 0.75rem; }
+.kontakt div { border-left: 4px solid var(--ocker); padding-left: 1rem; }
 .kontakt dt {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-weight: 700;
   text-transform: uppercase;
-  color: #d9ccb9;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  color: var(--hinweis);
 }
-.kontakt dd { margin: 0.25rem 0 0; overflow-wrap: anywhere; }
+.kontakt dd { margin: 0.2rem 0 0; overflow-wrap: anywhere; }
 .kontakt a { display: inline-block; padding: 0.4rem 0; min-height: 44px; }
-.block-dunkel .knopf { border-color: #f6efe3; color: #f6efe3; }
-.block-dunkel .knopf:hover { background: #f6efe3; color: var(--nacht); }
-.block-dunkel .knopf-voll { background: #f6efe3; color: var(--nacht); }
-.block-dunkel .knopf-voll:hover { background: #fff; border-color: #fff; color: var(--nacht); }
+.block-dunkel .knopf:not(.knopf-voll) { color: #fff; }
+.block-dunkel .knopf:not(.knopf-voll):hover { background: rgb(255 255 255 / 0.14); }
 
-/* ---------- Fuss ---------- */
-.fuss { padding: 2rem 0 3rem; font-size: 1.125rem; }
-.fuss details { border-bottom: 1px solid var(--linie); }
-.fuss summary {
-  cursor: pointer;
-  padding: 0.75rem 0;
-  font-weight: 600;
-  color: var(--tanne);
-}
-.fuss details p { color: var(--grau); }
-.fuss-zeile { margin-top: 1.5rem; color: var(--grau); }
+/* Fuss */
+.fuss { background: #13251d; color: #dfe6e1; padding: 2rem 0 2.5rem; font-size: 1rem; }
+.fuss details { border-bottom: 1px solid rgb(255 255 255 / 0.18); }
+.fuss summary { cursor: pointer; font-weight: 700; min-height: 48px; display: flex; align-items: center; }
+.fuss details p { margin: 0.6rem 0; }
+.fuss a { color: #fff; }
+.fuss :focus-visible { outline-color: var(--hinweis); }
+.fuss-zeile { margin-top: 1.5rem; color: #c9d2cc; }
 .fuss-zeile a { display: inline-block; min-height: 44px; }
