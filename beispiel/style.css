@@ -258,11 +258,17 @@ section[id] { scroll-margin-top: 0; }
   border-radius: 4px;
   font-size: 1rem;
 }
+/* Handy: untereinander. Ab Tablet: 3 oben (Mo-Mi), Do und Fr zentriert darunter */
 .menue {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin: 1.5rem 0 0;
+}
+.menue div { flex: 1 1 100%; }
+@media (min-width: 44rem) {
+  .menue div { flex: 0 1 calc((100% - 2rem) / 3); }
 }
 .menue div {
   background: var(--karte);
@@ -341,3 +347,79 @@ section[id] { scroll-margin-top: 0; }
 .fuss :focus-visible { outline-color: var(--hinweis); }
 .fuss-zeile { margin-top: 1.5rem; color: #c9d2cc; }
 .fuss-zeile a { display: inline-block; min-height: 44px; }
+
+/* Knöpfe als <button> */
+button.knopf { font-family: inherit; cursor: pointer; background: transparent; }
+button.knopf-voll { background: var(--ocker); }
+
+/* Reservation (Popup) */
+.reservation {
+  width: min(34rem, calc(100% - 1.5rem));
+  max-height: calc(100dvh - 1.5rem);
+  overflow: auto;
+  margin: auto;
+  padding: 1.25rem clamp(1.1rem, 4vw, 1.75rem) 1.5rem;
+  border: 0;
+  border-top: 6px solid var(--ocker);
+  border-radius: var(--radius);
+  background: var(--stein);
+  color: var(--text);
+  box-shadow: 0 20px 60px rgb(0 0 0 / 0.35);
+}
+.reservation::backdrop { background: rgb(10 25 20 / 0.6); }
+.reservation-kopf { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.reservation h2 { font-size: 1.7rem; margin-bottom: 0.4em; }
+.schliessen {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--tanne);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--tanne);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.schliessen:hover { background: var(--tanne); color: #fff; }
+.reservation-info { color: var(--grau); font-size: 1rem; }
+.formular .feld { margin: 0 0 0.9rem; display: flex; flex-direction: column; gap: 0.25rem; flex: 1 1 10rem; min-width: 0; }
+.feld-reihe { display: flex; flex-wrap: wrap; gap: 0 1rem; }
+.formular label { font-weight: 700; font-size: 1rem; }
+.formular input, .formular textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.6rem 0.75rem;
+  border: 2px solid #9aa39d;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  font-size: 1.1rem;
+}
+.formular textarea { resize: vertical; }
+.formular input:focus, .formular textarea:focus { border-color: var(--tanne); outline: 3px solid var(--ocker); outline-offset: 1px; }
+.formular ::placeholder { color: #69706b; opacity: 1; }
+/* Beispieltext verschwindet, sobald das Feld angeklickt wird */
+.formular textarea:focus::placeholder { color: transparent; }
+.formular .knopf { width: 100%; margin-top: 0.4rem; }
+.reservation-fuss { margin: 0.8rem 0 0; font-size: 0.95rem; color: var(--grau); text-align: center; }
+
+/* Nur Musterseite: Bestätigung nach dem Absenden */
+.danke { display: none; }
+.danke:target {
+  display: block;
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  width: min(34rem, calc(100% - 1.5rem));
+  margin: 0;
+  padding: 1rem 1.25rem;
+  background: var(--tanne);
+  color: #fff;
+  border-left: 6px solid var(--ocker);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.3);
+  z-index: 40;
+}

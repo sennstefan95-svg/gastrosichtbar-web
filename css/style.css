@@ -261,7 +261,7 @@ section[id] { scroll-margin-top: 1rem; }
   color: var(--grau);
   margin-top: 0.2rem;
 }
-.eckdaten a { color: var(--tinte); display: inline-block; min-height: 44px; }
+.eckdaten a { color: var(--tinte); display: inline-block; min-height: 44px; overflow-wrap: anywhere; }
 
 /* Z-Muster: Text und Bild abwechselnd */
 .split {

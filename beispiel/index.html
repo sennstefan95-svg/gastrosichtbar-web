@@ -10,7 +10,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/zilla-slab-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/nunito-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=20260928b">
+  <link rel="stylesheet" href="style.css?v=20260928c">
 </head>
 <body>
   <!-- Hinweis Beispielseite: bei einer Kundenseite ganz entfernen -->
@@ -46,7 +46,7 @@
         <p class="start-ort">Musterweg 1, Musterdorf SZ</p>
         <div class="knoepfe">
           <a class="knopf knopf-voll" href="#hinweis">Anrufen</a>
-          <a class="knopf" href="../#kontakt">Reservieren</a>
+          <button class="knopf" type="button" popovertarget="reservation">Reservieren</button>
         </div>
       </div>
     </section>
@@ -167,11 +167,58 @@
         <p>Mit dem Bus bis Haltestelle «Musterdorf, Dorf», dann drei Minuten zu Fuss. Parkplätze beim Haus.</p>
         <div class="knoepfe">
           <a class="knopf knopf-voll" href="#hinweis">Anrufen</a>
-          <a class="knopf" href="../#kontakt">Reservieren</a>
+          <button class="knopf" type="button" popovertarget="reservation">Reservieren</button>
         </div>
       </div>
     </section>
   </main>
+
+
+  <!-- Reservation: Popup ohne JavaScript (popover). In der Musterseite wird nichts gesendet:
+       Die Felder haben kein name-Attribut, darum verlassen keine Daten den Browser.
+       Bei einer Kundenseite name-Attribute setzen und action auf das Reservations-Skript richten. -->
+  <div id="reservation" class="reservation" popover aria-labelledby="reservation-titel">
+    <div class="reservation-kopf">
+      <h2 id="reservation-titel">Tisch reservieren</h2>
+      <button class="schliessen" type="button" popovertarget="reservation" popovertargetaction="hide" aria-label="Fenster schliessen">×</button>
+    </div>
+    <p class="reservation-info">Wir bestätigen Ihre Reservation telefonisch oder per SMS. Felder mit * bitte ausfüllen.</p>
+    <form class="formular" action="#reservation-danke" method="get">
+      <p class="feld">
+        <label for="r-name">Name *</label>
+        <input id="r-name" type="text" autocomplete="name" required>
+      </p>
+      <div class="feld-reihe">
+        <p class="feld">
+          <label for="r-personen">Personen *</label>
+          <input id="r-personen" type="number" inputmode="numeric" min="1" max="40" required>
+        </p>
+        <p class="feld">
+          <label for="r-tel">Telefon *</label>
+          <input id="r-tel" type="tel" autocomplete="tel" required>
+        </p>
+      </div>
+      <div class="feld-reihe">
+        <p class="feld">
+          <label for="r-datum">Datum *</label>
+          <input id="r-datum" type="date" required>
+        </p>
+        <p class="feld">
+          <label for="r-zeit">Uhrzeit *</label>
+          <input id="r-zeit" type="time" min="11:30" max="21:00" step="900" required>
+        </p>
+      </div>
+      <p class="feld">
+        <label for="r-spezielles">Spezielles</label>
+        <textarea id="r-spezielles" rows="3" placeholder="z. B. Allergien, vegetarisch oder vegan, Kinderstuhl, Rollstuhl, Geburtstag"></textarea>
+      </p>
+      <button class="knopf knopf-voll" type="submit">Reservation senden</button>
+      <p class="reservation-fuss">Beispielseite: Diese Anfrage wird nicht gesendet.</p>
+    </form>
+  </div>
+
+  <!-- Nur Musterseite: Anzeige nach dem Absenden -->
+  <p id="reservation-danke" class="danke">Beispiel: So sieht der Gast die Bestätigung. «Danke, Ihre Anfrage ist bei uns. Wir melden uns so rasch wie möglich.» Gesendet wurde nichts.</p>
 
   <!-- Fuss mit Impressum und Datenschutz -->
   <footer class="fuss">
