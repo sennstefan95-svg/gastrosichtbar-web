@@ -129,7 +129,12 @@ a:hover { color: var(--tanne); }
 .hinweis:target { outline: 4px solid var(--tanne); outline-offset: -4px; }
 
 /* Kopf: dunkles Band, bleibt oben stehen */
-.kopf { background: var(--tanne); color: #fff; position: sticky; top: 0; z-index: 10; }
+.kopf { background: var(--tanne); color: #fff; }
+/* Ab Tablet bleibt der Kopf oben stehen; auf dem Handy nicht, er wäre zu hoch */
+@media (min-width: 44rem) {
+  .kopf { position: sticky; top: 0; z-index: 10; }
+  html section[id] { scroll-margin-top: 4rem; }
+}
 .kopf-innen {
   display: flex;
   flex-wrap: wrap;
@@ -223,7 +228,7 @@ a:hover { color: var(--tanne); }
 
 /* Abschnitte */
 .block { padding-top: clamp(3rem, 8vw, 5rem); padding-bottom: clamp(3rem, 8vw, 5rem); }
-section[id] { scroll-margin-top: 4rem; }
+section[id] { scroll-margin-top: 0; }
 .block-farbig { background: #e4e9e2; }
 .notiz { color: var(--grau); font-size: 1.05rem; margin-top: 1rem; }
 
