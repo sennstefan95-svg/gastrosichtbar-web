@@ -23,7 +23,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/fraunces-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260928e">
+  <link rel="stylesheet" href="css/style.css?v=20260928f">
 
   <script type="application/ld+json">
   {
@@ -108,7 +108,20 @@
 
   <header class="wrap topbar">
     <a class="logo" href="./" aria-label="gastrosichtbar.ch, Startseite">gastro<span>sichtbar</span>.ch</a>
-    <a class="topbar-tel" href="mailto:stefan@gastrosichtbar.ch">stefan@gastrosichtbar.ch</a>
+    <div class="topbar-rechts">
+      <a class="topbar-tel" href="mailto:stefan@gastrosichtbar.ch">stefan@gastrosichtbar.ch</a>
+      <!-- Menu without JavaScript: <details> opens and closes on click -->
+      <details class="menu">
+        <summary aria-label="Menü öffnen"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span></summary>
+        <nav class="menu-liste" aria-label="Angebote">
+          <a href="#paket">Sichtbar werden<small>CHF 290 einmalig</small></a>
+          <a href="#betreuung">Sichtbar bleiben<small>CHF 90 pro Monat</small></a>
+          <a href="#erstellen">Website erstellen<small>ab CHF 290 einmalig</small></a>
+          <a href="#betreiben">Website betreiben<small>CHF 50 pro Monat</small></a>
+          <a class="menu-kontakt" href="#kontakt">Kontakt</a>
+        </nav>
+      </details>
+    </div>
   </header>
 
   <main id="inhalt">
@@ -334,7 +347,7 @@
       <p class="website-intro">Eine ansprechende Website gehört heute zum guten Ton. Viele Gäste finden Sie auf Google und schauen danach auf Ihrer Website nach Speisekarte und Öffnungszeiten. Dort entscheiden sie oft, ob sie kommen. Ich baue Ihnen eine schlanke Website oder pflege Ihre bestehende. Beides geht auch einzeln.</p>
 
       <div class="angebote">
-        <article class="angebot" aria-labelledby="erstellen-titel">
+        <article id="erstellen" class="angebot" aria-labelledby="erstellen-titel">
           <p class="angebot-art">Einmalig</p>
           <h3 id="erstellen-titel">Website erstellen</h3>
           <p class="angebot-preis"><strong>CHF 290</strong> zusammen mit «Website betreiben», sonst CHF&nbsp;590</p>
@@ -353,7 +366,7 @@
           </ul>
         </article>
 
-        <article class="angebot" aria-labelledby="betreiben-titel">
+        <article id="betreiben" class="angebot" aria-labelledby="betreiben-titel">
           <p class="angebot-art">Monatlich</p>
           <h3 id="betreiben-titel">Website betreiben</h3>
           <p class="angebot-preis"><strong>CHF 50</strong> pro Monat</p>

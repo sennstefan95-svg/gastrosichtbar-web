@@ -818,3 +818,36 @@ section[id] { scroll-margin-top: 1rem; }
 }
 
 .nobr { white-space: nowrap; }
+
+/* Menu (hamburger), no JavaScript */
+html { scroll-behavior: smooth; }
+section[id], article[id] { scroll-margin-top: 1rem; }
+.topbar-rechts { display: flex; align-items: center; gap: 0.75rem; margin-left: auto; }
+.menu { position: relative; }
+.menu summary {
+  list-style: none; cursor: pointer;
+  width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--linie); border-radius: 8px; background: var(--papier);
+}
+.menu summary::-webkit-details-marker { display: none; }
+.menu summary:hover, .menu[open] summary { border-color: var(--weinrot); }
+.menu summary:focus-visible { outline: 3px solid var(--weinrot); outline-offset: 2px; }
+.menu-icon { display: flex; flex-direction: column; gap: 5px; }
+.menu-icon span { display: block; width: 20px; height: 2px; background: var(--tinte); border-radius: 1px; transition: transform .2s, opacity .2s; }
+.menu[open] .menu-icon span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu[open] .menu-icon span:nth-child(2) { opacity: 0; }
+.menu[open] .menu-icon span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.menu-liste {
+  position: absolute; right: 0; top: calc(100% + 0.5rem); z-index: 20;
+  min-width: 15rem; padding: 0.5rem; display: flex; flex-direction: column;
+  background: var(--papier); border: 1px solid var(--linie); border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+}
+.menu-liste a {
+  display: flex; flex-direction: column; padding: 0.6rem 0.75rem; min-height: 44px; justify-content: center;
+  color: var(--tinte); text-decoration: none; font-weight: 600; border-radius: 6px;
+}
+.menu-liste a small { font-weight: 400; color: var(--grau); font-size: 0.8125rem; }
+.menu-liste a:hover, .menu-liste a:focus-visible { background: rgba(138,36,50,.07); color: var(--weinrot); }
+.menu-liste .menu-kontakt { margin-top: 0.35rem; background: var(--weinrot); color: #fff; text-align: center; align-items: center; }
+.menu-liste .menu-kontakt:hover, .menu-liste .menu-kontakt:focus-visible { background: var(--weinrot); color: #fff; filter: brightness(1.1); }
