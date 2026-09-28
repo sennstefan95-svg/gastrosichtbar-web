@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gasthaus Musterhof, Musterdorf | Beispielseite</title>
+  <meta name="description" content="Beispielseite von gastrosichtbar.ch: So kann die Website eines Gasthauses aussehen. Öffnungszeiten, Wochenmenü, Speisekarte und Kontakt. Der Betrieb ist erfunden.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#fbf6ec">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/fraunces-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/source-sans-3-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20260928">
+</head>
+<body>
+  <!-- Hinweis Beispielseite: bei einer Kundenseite ganz entfernen -->
+  <p id="hinweis" class="hinweis">Beispielseite von gastrosichtbar.ch. Der Betrieb ist erfunden. <a href="../">Zur Startseite von gastrosichtbar.ch</a></p>
+
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="kopf">
+    <div class="rahmen kopf-innen">
+      <a class="marke" href="./">Gasthaus Musterhof</a>
+      <nav aria-label="Seitenbereiche">
+        <ul>
+          <li><a href="#zeiten">Zeiten</a></li>
+          <li><a href="#menue">Menü</a></li>
+          <li><a href="#karte">Karte</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inhalt">
+
+    <!-- Startbild -->
+    <section class="start" aria-labelledby="name">
+      <picture>
+        <source type="image/webp" srcset="img/startbild-800.webp 800w, img/startbild-1600.webp 1600w" sizes="(min-width: 72rem) 72rem, 100vw">
+        <img class="start-bild" src="img/startbild-1600.jpg" srcset="img/startbild-800.jpg 800w, img/startbild-1600.jpg 1600w" sizes="(min-width: 72rem) 72rem, 100vw" width="1600" height="900" fetchpriority="high" alt="Illustration: ein Gasthaus mit Holzfassade an einem See, dahinter Berge">
+      </picture>
+      <div class="rahmen start-text">
+        <h1 id="name">Gasthaus Musterhof</h1>
+        <p class="start-satz">Innerschweizer Küche mit Zutaten aus der Region, in der Gaststube oder auf der Terrasse mit Blick auf den See.</p>
+        <p class="start-ort">Musterweg 1, Musterdorf SZ</p>
+        <div class="knoepfe">
+          <a class="knopf knopf-voll" href="#hinweis">Anrufen</a>
+          <a class="knopf" href="../#kontakt">Reservieren</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Öffnungszeiten -->
+    <section id="zeiten" class="rahmen block" aria-labelledby="zeiten-titel">
+      <h2 id="zeiten-titel">Öffnungszeiten</h2>
+      <table class="zeiten">
+        <caption class="sr-only">Öffnungszeiten nach Wochentag</caption>
+        <tbody>
+          <tr><th scope="row">Montag</th><td>08.30–23.00</td></tr>
+          <tr><th scope="row">Dienstag</th><td>08.30–23.00</td></tr>
+          <tr><th scope="row">Mittwoch</th><td>08.30–23.00</td></tr>
+          <tr><th scope="row">Donnerstag</th><td>08.30–23.00</td></tr>
+          <tr><th scope="row">Freitag</th><td>08.30–24.00</td></tr>
+          <tr><th scope="row">Samstag</th><td>10.00–24.00</td></tr>
+          <tr class="ruhetag"><th scope="row">Sonntag</th><td>Ruhetag</td></tr>
+        </tbody>
+      </table>
+      <p class="notiz">Warme Küche 11.30–13.30 und 18.00–21.00. Ferien und Feiertage stehen jeweils hier.</p>
+    </section>
+
+    <!-- Wochenmenü: jede Woche Datum und Gerichte ersetzen -->
+    <section id="menue" class="block block-farbig" aria-labelledby="menue-titel">
+      <div class="rahmen">
+        <h2 id="menue-titel">Wochenmenü</h2>
+        <p class="woche">Woche vom 28. September bis 2. Oktober 2026</p>
+        <p class="notiz">Mittags 11.30–13.30, jeweils mit Suppe oder Salat. Täglich auch ein Vegi-Menü.</p>
+        <dl class="menue">
+          <div>
+            <dt>Montag</dt>
+            <dd><span class="gericht">Älplermagronen mit Apfelmus und Röstzwiebeln</span><span class="preis">CHF 19.50</span></dd>
+          </div>
+          <div>
+            <dt>Dienstag</dt>
+            <dd><span class="gericht">Hacktätschli mit Kartoffelstock und Rüebli</span><span class="preis">CHF 21.50</span></dd>
+          </div>
+          <div>
+            <dt>Mittwoch</dt>
+            <dd><span class="gericht">Luzerner Chügelipastete mit Reis</span><span class="preis">CHF 24.50</span></dd>
+          </div>
+          <div>
+            <dt>Donnerstag</dt>
+            <dd><span class="gericht">Geschnetzeltes vom Schwein an Rahmsauce mit Rösti</span><span class="preis">CHF 23.50</span></dd>
+          </div>
+          <div>
+            <dt>Freitag</dt>
+            <dd><span class="gericht">Knusperli vom Egli mit Salzkartoffeln und Sauce Tartare</span><span class="preis">CHF 26.50</span></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Speisekarte -->
+    <section id="karte" class="rahmen block" aria-labelledby="karte-titel">
+      <h2 id="karte-titel">Speisekarte</h2>
+
+      <h3>Vorspeisen</h3>
+      <ul class="karte">
+        <li><span class="gericht">Kürbiscremesuppe mit Kernen</span><span class="preis">CHF 9.50</span></li>
+        <li><span class="gericht">Bouillon mit Flädli</span><span class="preis">CHF 8.50</span></li>
+        <li><span class="gericht">Gemischter Salat vom Buffet</span><span class="preis">CHF 9.50</span></li>
+        <li><span class="gericht">Plättli mit Trockenfleisch und Bergkäse</span><span class="preis">CHF 18.50</span></li>
+      </ul>
+
+      <h3>Hauptgänge</h3>
+      <ul class="karte">
+        <li><span class="gericht">Luzerner Chügelipastete mit Reis</span><span class="preis">CHF 32.00</span></li>
+        <li><span class="gericht">Cordon bleu vom Schwein mit Pommes frites und Gemüse</span><span class="preis">CHF 34.00</span></li>
+        <li><span class="gericht">Älplermagronen mit Apfelmus und Röstzwiebeln</span><span class="preis">CHF 24.00</span></li>
+        <li><span class="gericht">Hirschpfeffer mit Spätzli, Rotkraut und Marroni (im Herbst)</span><span class="preis">CHF 39.00</span></li>
+      </ul>
+
+      <h3>Desserts</h3>
+      <ul class="karte">
+        <li><span class="gericht">Zuger Kirschtorte</span><span class="preis">CHF 9.50</span></li>
+        <li><span class="gericht">Vermicelles mit Meringue und Rahm</span><span class="preis">CHF 11.50</span></li>
+        <li><span class="gericht">Caramelköpfli mit Rahm</span><span class="preis">CHF 8.50</span></li>
+      </ul>
+
+      <p class="notiz">Preise in Franken inklusive Mehrwertsteuer. Fleisch und Fisch aus der Schweiz. Fragen Sie uns nach Allergenen.</p>
+    </section>
+
+    <!-- Über uns -->
+    <section id="ueber-uns" class="rahmen block" aria-labelledby="ueber-titel">
+      <div class="ueber">
+        <div>
+          <h2 id="ueber-titel">Über uns</h2>
+          <p>Familie Muster führt den Musterhof in zweiter Generation. In der Küche steht, was die Bauern im Tal liefern: Fleisch, Käse, Gemüse und im Herbst Wild. In der Gaststube sind Vereine, Familien und Wandergruppen gleichermassen willkommen.</p>
+        </div>
+        <picture>
+          <source type="image/webp" srcset="img/stube-800.webp">
+          <img class="ueber-bild" src="img/stube-800.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Illustration: gedeckter Tisch in einer holzgetäferten Gaststube, im Fenster Berge">
+        </picture>
+      </div>
+    </section>
+
+    <!-- Kontakt und Anfahrt -->
+    <section id="kontakt" class="block block-dunkel" aria-labelledby="kontakt-titel">
+      <div class="rahmen">
+        <h2 id="kontakt-titel">Kontakt und Anfahrt</h2>
+        <address>
+          <dl class="kontakt">
+            <div>
+              <dt>Adresse</dt>
+              <dd>Gasthaus Musterhof<br>Musterweg 1<br>Musterdorf SZ<br><a href="https://www.openstreetmap.org/#map=10/47.03/8.75">Karte öffnen (OpenStreetMap)</a></dd>
+            </div>
+            <div>
+              <dt>Telefon</dt>
+              <dd>041 xxx xx xx (Beispiel)</dd>
+            </div>
+            <div>
+              <dt>E-Mail</dt>
+              <dd>info@musterhof.example (Beispiel)</dd>
+            </div>
+          </dl>
+        </address>
+        <p>Mit dem Bus bis Haltestelle «Musterdorf, Dorf», dann drei Minuten zu Fuss. Parkplätze beim Haus.</p>
+        <div class="knoepfe">
+          <a class="knopf knopf-voll" href="#hinweis">Anrufen</a>
+          <a class="knopf" href="../#kontakt">Reservieren</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Fuss mit Impressum und Datenschutz -->
+  <footer class="fuss">
+    <div class="rahmen">
+      <details id="impressum">
+        <summary>Impressum</summary>
+        <p>Gasthaus Musterhof, Familie Muster<br>Musterweg 1, Musterdorf SZ<br>Telefon 041 xxx xx xx (Beispiel)<br>E-Mail info@musterhof.example (Beispiel)</p>
+        <p>Einzelunternehmen. Verantwortlich für den Inhalt: Familie Muster.</p>
+        <p>Umsetzung und Betrieb der Website: <a href="../">gastrosichtbar.ch</a>, Stefan Senn, Brunnen.</p>
+      </details>
+      <details id="datenschutz">
+        <summary>Datenschutz</summary>
+        <p>Diese Website setzt keine Cookies, verwendet keine Analyse- oder Werbedienste und lädt keine Inhalte von fremden Servern. Beim Besuch werden keine Daten an Dritte übermittelt.</p>
+        <p>Die Website liegt auf einem Server in der Schweiz. Der Server speichert technisch notwendige Angaben (IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browser) in Protokolldateien. Diese dienen nur dem sicheren Betrieb.</p>
+        <p>Wenn Sie uns anrufen oder schreiben, verwenden wir Ihre Angaben nur, um Ihre Anfrage oder Reservation zu bearbeiten. Der Link zur Karte führt auf OpenStreetMap. Dort gilt deren Datenschutzerklärung.</p>
+        <p>Auskunft, Berichtigung oder Löschung Ihrer Daten: eine kurze Nachricht an uns genügt.</p>
+      </details>
+      <p class="fuss-zeile">© 2026 Gasthaus Musterhof · Beispielseite von <a href="../">gastrosichtbar.ch</a></p>
+    </div>
+  </footer>
+</body>
+</html>

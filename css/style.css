@@ -757,3 +757,59 @@ section[id] { scroll-margin-top: 1rem; }
   min-height: 44px;
   margin-bottom: 1.5rem;
 }
+
+/* ---------- Website: erstellen und betreiben ---------- */
+.website-intro { max-width: 36em; }
+.angebote {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: clamp(2rem, 5vw, 3rem);
+}
+@media (min-width: 56rem) {
+  .angebote { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+}
+.angebot {
+  background: var(--papier);
+  border: 1px solid var(--linie);
+  border-top: 6px solid var(--weinrot);
+  border-radius: 8px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+}
+.angebot-art {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--weinrot);
+  margin: 0 0 0.5rem;
+}
+.angebot h3 { font-size: clamp(1.75rem, 4vw, 2.25rem); margin: 0 0 0.75rem; }
+.angebot-preis { margin: 0 0 0.5rem; color: var(--grau); }
+.angebot-preis strong {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.5rem, 7vw, 3.25rem);
+  line-height: 1.1;
+  color: var(--tinte);
+}
+.angebot-claim {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  color: var(--weinrot);
+  margin: 0 0 1.25rem;
+}
+.angebot-liste { margin: 0 0 1.25rem; padding: 0; list-style: none; }
+.angebot-liste li { position: relative; padding: 0.6rem 0 0.6rem 1.5rem; border-top: 1px solid var(--sand); }
+.angebot-liste li::before { content: ""; position: absolute; left: 0; top: 1.15rem; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--senf); }
+.angebot-fuss {
+  margin: auto 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--linie);
+  font-size: 1rem;
+  color: var(--grau);
+}
