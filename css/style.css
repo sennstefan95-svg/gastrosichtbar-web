@@ -822,7 +822,8 @@ section[id] { scroll-margin-top: 1rem; }
 /* Menu (hamburger), no JavaScript */
 html { scroll-behavior: smooth; }
 section[id], article[id] { scroll-margin-top: 1rem; }
-.topbar-rechts { display: flex; align-items: center; gap: 0.75rem; margin-left: auto; }
+.menu-leiste { display: flex; align-items: center; gap: 1rem; padding-top: 0.25rem; padding-bottom: 0.5rem; }
+.menu-leiste::before, .menu-leiste::after { content: ""; flex: 1; height: 1px; background: var(--linie); }
 .menu { position: relative; }
 .menu summary {
   list-style: none; cursor: pointer;
@@ -838,7 +839,7 @@ section[id], article[id] { scroll-margin-top: 1rem; }
 .menu[open] .menu-icon span:nth-child(2) { opacity: 0; }
 .menu[open] .menu-icon span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 .menu-liste {
-  position: absolute; right: 0; top: calc(100% + 0.5rem); z-index: 20;
+  position: absolute; left: 50%; transform: translateX(-50%); top: calc(100% + 0.5rem); z-index: 20;
   min-width: 15rem; padding: 0.5rem; display: flex; flex-direction: column;
   background: var(--papier); border: 1px solid var(--linie); border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0,0,0,.12);
