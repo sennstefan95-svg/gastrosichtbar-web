@@ -816,3 +816,5 @@ section[id] { scroll-margin-top: 1rem; }
   font-size: 1rem;
   color: var(--grau);
 }
+
+.nobr { white-space: nowrap; }
