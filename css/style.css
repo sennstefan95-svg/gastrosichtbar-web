@@ -156,7 +156,8 @@ a:hover { color: var(--weinrot-dunkel); }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0 1rem;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
 }
@@ -180,7 +181,9 @@ a:hover { color: var(--weinrot-dunkel); }
   white-space: nowrap;
 }
 .topbar-tel:hover { color: var(--weinrot); text-decoration: underline; }
+/* Schmale Handys: E-Mail rutscht unter das Logo statt über den Rand */
 @media (max-width: 26rem) {
+  .topbar { padding-bottom: 0.5rem; }
   .topbar-tel { font-size: 0.95rem; }
 }
 
