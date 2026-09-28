@@ -181,7 +181,7 @@ a:hover { color: var(--weinrot-dunkel); }
 }
 .topbar-tel:hover { color: var(--weinrot); text-decoration: underline; }
 @media (max-width: 26rem) {
-  .topbar-tel .lang { display: none; }
+  .topbar-tel { font-size: 0.95rem; }
 }
 
 /* ---------- Knöpfe ---------- */
