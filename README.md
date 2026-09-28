@@ -27,8 +27,8 @@ impressum.html      Impressum
 datenschutz.html    Datenschutzerklärung
 css/style.css       Alle Stile; Farben und Schriften oben in :root
 fonts/              Selbst gehostete Schriften (Fraunces, Source Sans 3, SIL OFL 1.1)
-img/stefan.jpg      Porträt (Platzhalter), Fallback
-img/stefan.webp     Porträt (Platzhalter), wird von modernen Browsern geladen
+img/stefan.jpg      Porträt, Fallback
+img/stefan.webp     Porträt, wird von modernen Browsern geladen
 img/og.jpg          Vorschaubild für geteilte Links (1200 × 630 px)
 favicon.svg         Symbol im Browser-Tab
 robots.txt, sitemap.xml
@@ -44,7 +44,7 @@ Die Musterseite hat `noindex` und steht bewusst nicht in `sitemap.xml`.
 
 ## Foto ersetzen
 
-Das Porträt ist ein Platzhalter. Ersetzen Sie **beide** Dateien, gleicher Name:
+Das Porträt ist seit 28.9.2026 das echte Foto von Stefan (Balkon, Brunnen). Zum Austauschen **beide** Dateien ersetzen, gleicher Name, EXIF/GPS vorher entfernen:
 
 - `img/stefan.jpg`
 - `img/stefan.webp`
