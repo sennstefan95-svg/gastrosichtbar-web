@@ -10,7 +10,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/zilla-slab-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/nunito-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=20260928d">
+  <link rel="stylesheet" href="style.css?v=20260930">
 </head>
 <body>
   <!-- Hinweis Beispielseite: bei einer Kundenseite ganz entfernen -->
@@ -37,8 +37,8 @@
     <!-- Startbild -->
     <section class="start" aria-labelledby="name">
       <picture>
-        <source type="image/webp" srcset="img/startbild-800.webp 800w, img/startbild-1600.webp 1600w" sizes="(min-width: 72rem) 72rem, 100vw">
-        <img class="start-bild" src="img/startbild-1600.jpg" srcset="img/startbild-800.jpg 800w, img/startbild-1600.jpg 1600w" sizes="(min-width: 72rem) 72rem, 100vw" width="1600" height="900" fetchpriority="high" alt="Illustration: ein Gasthaus mit Holzfassade an einem See, dahinter Berge">
+        <source type="image/webp" srcset="img/startbild-800.webp?v=20260930 800w, img/startbild-1600.webp?v=20260930 1600w" sizes="(min-width: 72rem) 72rem, 100vw">
+        <img class="start-bild" src="img/startbild-1600.jpg?v=20260930" srcset="img/startbild-800.jpg?v=20260930 800w, img/startbild-1600.jpg?v=20260930 1600w" sizes="(min-width: 72rem) 72rem, 100vw" width="1600" height="900" fetchpriority="high" alt="Blick vom Ufer auf den See, Schiffsteg und Berge">
       </picture>
       <div class="rahmen start-text">
         <h1 id="name">Gasthaus Musterhof</h1>
@@ -138,10 +138,53 @@
           <p>Familie Muster führt den Musterhof in zweiter Generation. In der Küche steht, was die Bauern im Tal liefern: Fleisch, Käse, Gemüse und im Herbst Wild. In der Gaststube sind Vereine, Familien und Wandergruppen gleichermassen willkommen.</p>
         </div>
         <picture>
-          <source type="image/webp" srcset="img/stube-800.webp">
-          <img class="ueber-bild" src="img/stube-800.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Illustration: gedeckter Tisch in einer holzgetäferten Gaststube, im Fenster Berge">
+          <source type="image/webp" srcset="img/stube-800.webp?v=20260930">
+          <img class="ueber-bild" src="img/stube-800.jpg?v=20260930" width="800" height="600" loading="lazy" decoding="async" alt="Holzgetäferte Gaststube mit langen Tischen und Kachelofen">
         </picture>
       </div>
+    </section>
+
+    <!-- Bildergalerie: ohne JavaScript. Kleines Bild antippen öffnet das grosse Bild als Popup (popover). -->
+    <section id="bilder" class="rahmen block" aria-labelledby="bilder-titel">
+      <h2 id="bilder-titel">Bilder</h2>
+      <ul class="galerie">
+        <li><button class="galerie-knopf" type="button" popovertarget="bild-1" aria-label="Bild gross anzeigen: Älplermagronen mit Apfelmus auf einem Holztisch">
+          <picture>
+            <source type="image/webp" srcset="img/galerie-magronen-600.webp">
+            <img src="img/galerie-magronen-600.jpg" width="600" height="450" loading="lazy" decoding="async" alt="Älplermagronen mit Apfelmus auf einem Holztisch">
+          </picture>
+        </button></li>
+        <li><button class="galerie-knopf" type="button" popovertarget="bild-2" aria-label="Bild gross anzeigen: Paniertes Cordon bleu mit Sauce, Kartoffeln und Gemüse">
+          <picture>
+            <source type="image/webp" srcset="img/galerie-cordonbleu-600.webp">
+            <img src="img/galerie-cordonbleu-600.jpg" width="600" height="450" loading="lazy" decoding="async" alt="Paniertes Cordon bleu mit Sauce, Kartoffeln und Gemüse">
+          </picture>
+        </button></li>
+        <li><button class="galerie-knopf" type="button" popovertarget="bild-3" aria-label="Bild gross anzeigen: Kürbiscremesuppe im Suppenteller">
+          <picture>
+            <source type="image/webp" srcset="img/galerie-suppe-600.webp">
+            <img src="img/galerie-suppe-600.jpg" width="600" height="450" loading="lazy" decoding="async" alt="Kürbiscremesuppe im Suppenteller">
+          </picture>
+        </button></li>
+        <li><button class="galerie-knopf" type="button" popovertarget="bild-4" aria-label="Bild gross anzeigen: Gaststube mit Holztäfer und gedeckten Tischen">
+          <picture>
+            <source type="image/webp" srcset="img/galerie-stube-600.webp">
+            <img src="img/galerie-stube-600.jpg" width="600" height="450" loading="lazy" decoding="async" alt="Gaststube mit Holztäfer und gedeckten Tischen">
+          </picture>
+        </button></li>
+        <li><button class="galerie-knopf" type="button" popovertarget="bild-5" aria-label="Bild gross anzeigen: Ein Stück Zuger Kirschtorte">
+          <picture>
+            <source type="image/webp" srcset="img/galerie-kirschtorte-600.webp">
+            <img src="img/galerie-kirschtorte-600.jpg" width="600" height="450" loading="lazy" decoding="async" alt="Ein Stück Zuger Kirschtorte">
+          </picture>
+        </button></li>
+        <li><button class="galerie-knopf" type="button" popovertarget="bild-6" aria-label="Bild gross anzeigen: Blick über den Vierwaldstättersee und die Berge">
+          <picture>
+            <source type="image/webp" srcset="img/galerie-aussicht-600.webp">
+            <img src="img/galerie-aussicht-600.jpg" width="600" height="450" loading="lazy" decoding="async" alt="Blick über den Vierwaldstättersee und die Berge">
+          </picture>
+        </button></li>
+      </ul>
     </section>
 
     <!-- Kontakt und Anfahrt -->
@@ -221,6 +264,50 @@
     </form>
   </div>
 
+  <!-- Galerie: grosse Bilder -->
+  <div id="bild-1" class="bild-gross" popover>
+    <button class="schliessen" type="button" popovertarget="bild-1" popovertargetaction="hide" aria-label="Bild schliessen">×</button>
+    <picture>
+      <source type="image/webp" srcset="img/galerie-magronen-1400.webp">
+      <img src="img/galerie-magronen-1400.jpg" width="1400" height="1050" loading="lazy" decoding="async" alt="Älplermagronen mit Apfelmus auf einem Holztisch">
+    </picture>
+  </div>
+  <div id="bild-2" class="bild-gross" popover>
+    <button class="schliessen" type="button" popovertarget="bild-2" popovertargetaction="hide" aria-label="Bild schliessen">×</button>
+    <picture>
+      <source type="image/webp" srcset="img/galerie-cordonbleu-1400.webp">
+      <img src="img/galerie-cordonbleu-1400.jpg" width="1400" height="1050" loading="lazy" decoding="async" alt="Paniertes Cordon bleu mit Sauce, Kartoffeln und Gemüse">
+    </picture>
+  </div>
+  <div id="bild-3" class="bild-gross" popover>
+    <button class="schliessen" type="button" popovertarget="bild-3" popovertargetaction="hide" aria-label="Bild schliessen">×</button>
+    <picture>
+      <source type="image/webp" srcset="img/galerie-suppe-1400.webp">
+      <img src="img/galerie-suppe-1400.jpg" width="1400" height="1050" loading="lazy" decoding="async" alt="Kürbiscremesuppe im Suppenteller">
+    </picture>
+  </div>
+  <div id="bild-4" class="bild-gross" popover>
+    <button class="schliessen" type="button" popovertarget="bild-4" popovertargetaction="hide" aria-label="Bild schliessen">×</button>
+    <picture>
+      <source type="image/webp" srcset="img/galerie-stube-1400.webp">
+      <img src="img/galerie-stube-1400.jpg" width="1400" height="1050" loading="lazy" decoding="async" alt="Gaststube mit Holztäfer und gedeckten Tischen">
+    </picture>
+  </div>
+  <div id="bild-5" class="bild-gross" popover>
+    <button class="schliessen" type="button" popovertarget="bild-5" popovertargetaction="hide" aria-label="Bild schliessen">×</button>
+    <picture>
+      <source type="image/webp" srcset="img/galerie-kirschtorte-1400.webp">
+      <img src="img/galerie-kirschtorte-1400.jpg" width="1400" height="1050" loading="lazy" decoding="async" alt="Ein Stück Zuger Kirschtorte">
+    </picture>
+  </div>
+  <div id="bild-6" class="bild-gross" popover>
+    <button class="schliessen" type="button" popovertarget="bild-6" popovertargetaction="hide" aria-label="Bild schliessen">×</button>
+    <picture>
+      <source type="image/webp" srcset="img/galerie-aussicht-1400.webp">
+      <img src="img/galerie-aussicht-1400.jpg" width="1400" height="1050" loading="lazy" decoding="async" alt="Blick über den Vierwaldstättersee und die Berge">
+    </picture>
+  </div>
+
   <!-- Nur Musterseite: Anzeige nach dem Absenden -->
   <p id="reservation-danke" class="danke">Beispiel: So sieht der Gast die Bestätigung. «Danke, Ihre Anfrage ist bei uns. Sie erhalten die Bestätigung per E-Mail.» Gesendet wurde nichts.</p>
 
@@ -232,6 +319,10 @@
         <p>Gasthaus Musterhof, Familie Muster<br>Musterweg 1, Musterdorf SZ<br>Telefon 041 xxx xx xx (Beispiel)<br>E-Mail info@musterhof.example (Beispiel)</p>
         <p>Einzelunternehmen. Verantwortlich für den Inhalt: Familie Muster.</p>
         <p>Umsetzung und Betrieb der Website: <a href="../">gastrosichtbar.ch</a>, Stefan Senn, Brunnen.</p>
+      </details>
+      <details id="bildnachweis">
+        <summary>Bildnachweis</summary>
+        <p>Beispielfotos von Wikimedia Commons, zugeschnitten und verkleinert. Einzelnachweise mit Fotograf und Lizenz: <a href="BILDER.html">Bildnachweis</a>.</p>
       </details>
       <details id="datenschutz">
         <summary>Datenschutz</summary>
